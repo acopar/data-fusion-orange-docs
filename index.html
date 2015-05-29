@@ -18,7 +18,7 @@
 
         <h2>Data Fusion in Orange</h2>
         
-        <p></p>Instructions for setup of Orange and Data Fusion widget. 
+        <p></p>Installation instructions for Data Fusion with Orange.
         A course on data fusion. Instructors: Blaž Zupan and Marinka Žitnik.
         The course was prepared by members of the <a href="http://www.biolab.si">Bioinformatics Lab</a>, Ljubljana. This page
         includes a documentation on installation of software that will be used during the course. </p>
@@ -187,10 +187,11 @@ Open a terminal and run the following commands.</p>
 
 <pre><code>sudo apt-get update
 sudo apt-get install git python-pip python-virtualenv 
-	python3-dev python3-numpy python3-scipy 
-	python3-pyqt4 python-qt4-dev python3-sip-dev libqt4-dev
-	python3-matplotlib ipython3-notebook 
-	libxml2-dev zlib1g-dev
+  python3-dev python3-numpy python3-scipy 
+  python3-pyqt4 python-qt4-dev python3-sip-dev libqt4-dev
+  python3-matplotlib ipython3-notebook 
+  libxml2-dev zlib1g-dev
+  libgraphviz-dev
 </pre></code>
 
 <p>We will use Python3 and need to create a virtual environment for it:</p>
@@ -241,9 +242,10 @@ Open a terminal and run the following commands.</p>
 <pre><code>sudo zypper refresh
 sudo zypper install git python-virtualenv python3-devel 
 	gcc gcc-c++ python3-numpy python3-numpy-devel 
-	python3-scipy python3-matplotlib python3-IPython 
-	python3-Jinja2 libxml2-devel lzlib-devel 
+  python3-scipy python3-matplotlib python3-IPython 
+  python3-Jinja2 libxml2-devel lzlib-devel 
   python3-qt4-devel
+  libgraphviz-devel
 </pre></code>
 
 <p> We will use Python3 and need to create a virtual environment for it:</p>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Functional Genomics Workshop 2014 - Data Mining without Programming</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+
+        <h2>Data Mining Course</h2>
+
+        <h3>Software Installation Instructions</h3>
+
+		<h4>Step 1: Orange + add-ons</h4>
+
+		<p>For <a href="#mac">Mac OS X</a>, <a href="#win">Windows</a>, or <a href="#lin">Linux</a>.</p>
+
+		<h4>Step 2: Workshop Data Files</h4>
+
+		<p>Data files installation is independent of operating system. <a href="#s3">Instructions for all operating systems</a>.</p>
+
+
+      </header>
+      <section>
+
+
+<p>
+The following instructions will guide you to install Orange data mining suite we will use at the workshop.
+</p>
+ <!--If you have any questions or any problems with the installation, you are welcome to visit us at the Installation Clinic during coffee breaks on Wednesday from 10:15-10:45 and 15:40-16:15.</p-->
+
+<p>Installation of Orange is operating-system specific, but common to Mac, Windows and Linux is that you need to 
+<ol>
+<li>install Orange with add-ons for bioinformatics and network analysis, and</li>
+<li>install a few data files that we will use during the workshop.</li>
+</ol></p>
+
+<h3><a name="mac"></a>Step 1: Mac OS X</h3>
+
+<h4>In a nutshell</h4>
+
+<p>Go to Orange home page at <a href="http://orange.biolab.si">http://orange.biolab.si</a>, download the latest version of Orange (the dmg file), install it on your laptop. </p>
+
+<h4>Detailed installation instructions</h4>
+
+
+<p>Go to Orange home page at <a href="http://orange.biolab.si">http://orange.biolab.si</a> to download the installation file.</p>
+
+<!--p><img src="image01.png" style="max-width:500px;"></p-->
+
+<p>Your browser will most likely save the installation file (a file with a name similar to Orange-2.7.5-11947.dmg) in your Downloads folder. Open the installation file by double clicking on its icon. A window like the one below should open. Drag the Orange icon to your Applications.</p>
+
+<!--p><img src="image02.png" style="max-width:250px;"></p-->
+
+<p>Open Orange from your Application folder. That is, open the Application folder, find an application with the name Orange, click on its icon to select it, and open it by choosing Open from Finder's File menu (you should use this procedure instead of double click to open unregistered applications for the first time). </p>
+
+<h3><a name="win"></a>Step 1: Windows</h3>
+
+<h4>In a nutshell</h4>
+
+<ul>
+<li>Download and open Orange-installer.exe from <a href="http://orange.biolab.si">http://orange.biolab.si</a>.</li>
+<li>Follow installation wizard to install Orange3 and its dependencies (Python3.4, NumPy, ...).</li>
+<li>Open windows command prompt and start Python with command C:\Python34\python.exe.</li>
+</ul>
+
+<h4>Detailed installation instructions</h4>
+
+<p>Download the installation file Orange-installer.exe you will find on <a href="http://orange.biolab.si">http://orange.biolab.si</a> under the link. Save the downloaded file to an arbitrary location. Run the installation by double clicking the downloaded file. Choose Yes when asked whether you want to allow this program to make changes to your computer.</p>
+
+<p><img src="image01.png" style="max-width:300px;"></p>
+
+<p>Setup will ask you to confirm installation of Python3.4 on your computer. Click OK. If you already have Python 3.4 installed, this step is not needed. </p>
+
+<p><img src="image02.png" style="max-width:300px;"></p>
+<p> Follow installation dialog to complete installation of Python3.4. You can leave default settings and wait for installation to complete.
+
+<p><img src="image03.png" style="max-width:300px;"></p>
+<p><img src="image04.png" style="max-width:300px;"></p>
+<p><img src="image05.png" style="max-width:300px;"></p>
+<p><img src="image08.png" style="max-width:300px;"></p>
+
+<p>After installation of Python3.4, wizard will install Orange3 and its dependencies. This step might take a while.</p>
+
+<p><img src="image09.png" style="max-width:400px;"></p>
+
+<p>Go to windows start menu and write 'cmd'. Program cmd will appear on list as shown on picture below. Click on it and a window will open. </p>
+
+<p><img src="image15.png" style="max-width:200px;"></p>
+
+<p> If you used default settings during installation, you can enter python environment by writing following line:
+<pre><code> C:\Python34\python.exe </code></pre>
+
+<p>Now import Orange.</p>
+<pre><code> >>> import Orange </code></pre>
+
+
+<h3><a name="lin"></a>Step 1: Linux</h3>
+
+<h4>Ubuntu (tested on Ubuntu 12.04 and 14.04)</h4>
+
+<p>Open a terminal and run the following commands.</p>
+
+<p>Install the necessary system packages:</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install git python-pip python-virtualenv 
+	python3-dev python3-numpy python3-scipy 
+	python3-matplotlib ipython3-notebook 
+	libxml2-dev zlib1g-dev
+</pre></code>
+
+<p> Since Orange3 is using python3 we need to create a virtual environment. </p>
+
+<pre><code>mkdir orange3env
+virtualenv -p python3 --system-site-packages orange3env
+source orange3env/bin/activate</pre></code>
+
+<p> Install Orange and its requirements (this step will take about 15 minutes):
+<pre><code>git clone https://github.com/biolab/orange3
+cd orange3
+pip install -r requirements.txt
+python setup.py develop
+pip install Orange-Bioinformatics networkx python-igraph
+</pre></code>
+
+<p> Now you can start IPython environment and import Orange. To exit ipython type Ctrl+D.
+<pre><code>ipython
+>>> import Orange</pre></code>
+
+<p> To start IPython notebook, write the following line<q </p>
+<pre><code>ipython notebook</pre></code>
+
+<h4>openSUSE (tested on openSUSE 13.2)</h4>
+
+<p>Open a terminal and run the following commands.</p>
+
+<p>Install the necessary system packages:</p>
+
+<pre><code>sudo zypper refresh
+sudo zypper install git python-virtualenv python3-devel 
+	gcc gcc-c++ python3-numpy python3-numpy-devel 
+	python3-scipy python3-matplotlib python3-IPython 
+	libxml2-devel lzlib-devel 
+</pre></code>
+
+<p> Since Orange3 is using python3 we need to create a virtual environment. </p>
+
+<pre><code>mkdir orange3env
+virtualenv -p python3 --system-site-packages orange3env
+source orange3env/bin/activate</pre></code>
+
+<p> Install Orange and its requirements (this step will take about 15 minutes):
+<pre><code>git clone https://github.com/biolab/orange3
+cd orange3
+pip install -r requirements.txt
+python setup.py develop
+pip install Orange-Bioinformatics networkx python-igraph</pre></code>
+
+<p> Now you can start IPython environment and import Orange. To exit ipython type Ctrl+D.
+<pre><code>ipython
+>>> import Orange</pre></code>
+
+<p> To start IPython notebook, write the following line<q </p>
+<pre><code>ipython notebook</pre></code>
+
+      </section>
+      <footer>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

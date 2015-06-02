@@ -91,7 +91,7 @@ pip install numpy
 pip install -r requirements.txt
 pip install -r requirements-gui.txt
 python setup.py develop
-pip install ipython[all] Orange-Bioinformatics networkx python-igraph matplotlib
+git clone https://github.com/BlazZupan/orange3-datafusion
 </pre></code>
 
 <p> Now you can start IPython environment and import Orange. To exit ipython type Ctrl+D.
@@ -164,11 +164,11 @@ you want to allow this program to make changes to your computer.</p>
 
 <h2><a name="lin"></a>Step 1: Linux</h2>
 
-<h3>Ubuntu (tested on Ubuntu 12.04 and 14.04)</h3>
+<h3>Ubuntu (tested on Ubuntu 14.04 and 14.10)</h3>
 
 <h4> Automatic setup </h4>
 <p> Install can be automated by using 
-<a href="setup-ubuntu.sh"> Ubuntu setup script </a>. 
+<a href="setup-ubuntu.sh"> Ubuntu 14.04 setup script </a>.
 Setup will install Orange3 and its dependencies in a virtual environment, 
 and finally run IPython notebook. Before the installation, 
 move to directory, where you want Orange3 to be installed. 
@@ -190,8 +190,7 @@ sudo apt-get install git python-pip python-virtualenv
   python3-dev python3-numpy python3-scipy 
   python3-pyqt4 python-qt4-dev python3-sip-dev libqt4-dev
   python3-matplotlib ipython3-notebook 
-  libxml2-dev zlib1g-dev
-  libgraphviz-dev
+  libxml2-dev zlib1g-dev libgraphviz-dev
 </pre></code>
 
 <p>We will use Python3 and need to create a virtual environment for it:</p>
@@ -206,13 +205,14 @@ cd orange3
 pip install -r requirements.txt
 pip install -r requirements-gui.txt
 python setup.py develop
-pip install Orange-Bioinformatics networkx python-igraph
+cd ..
+git clone https://github.com/BlazZupan/orange3-datafusion
+cd orange3-datafusion
+python setup.py develop
 </pre></code>
 
-<p> Now you can check if Orange was successfully installed from IPython environment. 
-To exit ipython type Ctrl+D.
-<pre><code>ipython3
->>> import Orange</pre></code>
+<p> Now you can open Orange with following command </p>
+<pre><code>python -m Orange.canvas</pre></code>
 
 
 <p> To start IPython notebook, write the following line </p>
@@ -244,8 +244,7 @@ sudo zypper install git python-virtualenv python3-devel
 	gcc gcc-c++ python3-numpy python3-numpy-devel 
   python3-scipy python3-matplotlib python3-IPython 
   python3-Jinja2 libxml2-devel lzlib-devel 
-  python3-qt4-devel
-  libgraphviz-devel
+  python3-qt4-devel libgraphviz-devel
 </pre></code>
 
 <p> We will use Python3 and need to create a virtual environment for it:</p>
@@ -260,12 +259,13 @@ cd orange3
 pip install -r requirements.txt
 pip install -r requirements-gui.txt
 python setup.py develop
-pip install Orange-Bioinformatics networkx python-igraph</pre></code>
+cd ..
+git clone https://github.com/BlazZupan/orange3-datafusion
+cd orange3-datafusion
+python setup.py develop</pre></code>
 
-<p> Now you can check if Orange was successfully installed from IPython environment. 
-To exit ipython type Ctrl+D.
-<pre><code>ipython3
->>> import Orange</pre></code>
+<p> Now you can open Orange with following command </p>
+<pre><code>python -m Orange.canvas</pre></code>
 
 <p> To start IPython notebook, write the following line </p>
 <pre><code>ipython3 notebook</pre></code>
